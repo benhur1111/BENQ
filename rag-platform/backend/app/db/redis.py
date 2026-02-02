@@ -1,7 +1,8 @@
 import os
 import redis
 from redis.commands.search.field import TextField, VectorField
-from redis.commands.search.indexDefinition import IndexDefinition, IndexType
+
+from redis.commands.search.index_definition import IndexDefinition, IndexType
 
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
 REDIS_INDEX = "rag_index"

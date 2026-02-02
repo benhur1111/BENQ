@@ -1,4 +1,5 @@
-from rag.pipeline import rag_answer
+
+from app.rag.pipeline import rag_answer
 
 class RAGAgent:
     def __init__(self, max_steps=3):

@@ -1,5 +1,6 @@
 from app.db.redis import redis_client
-from rag.embeddings import embed_text
+from app.rag.embeddings import embed_text
+
 import uuid
 
 def ingest_document(text: str):

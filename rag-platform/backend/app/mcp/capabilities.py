@@ -1,5 +1,7 @@
 from fastapi import APIRouter
-from rag.pipeline import rag_pipeline
+
+from app.rag.pipeline import rag_pipeline
+
 
 router = APIRouter(prefix="/ai", tags=["AI"])
 

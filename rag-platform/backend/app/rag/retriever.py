@@ -1,6 +1,6 @@
 import numpy as np
 from redis.commands.search.query import Query
-from db.redis import get_redis, REDIS_INDEX
+from app.db.redis import get_redis, REDIS_INDEX
 
 
 def retrieve_docs(query_embedding, top_k: int = 3):

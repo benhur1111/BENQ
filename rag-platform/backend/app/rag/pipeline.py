@@ -1,5 +1,6 @@
-from rag.retriever import retrieve_docs
-from rag.generator import generate_answer
+from app.rag.retriever import retrieve_docs
+from app.rag.generator import generate_answer
+
 
 
 def rag_pipeline(query: str, embedding: list[float]) -> str:

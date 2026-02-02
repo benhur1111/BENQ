@@ -1,4 +1,5 @@
-from rag.pipeline import rag_answer
+from app.rag.pipeline import rag_answer
+
 
 def rag_tool(query: str) -> str:
     """
