@@ -1,0 +1,26 @@
+name: opus_rag_game_loop
+
+steps:
+  - id: observe
+    action: retrieve
+    input: "{{ player_input }}"
+
+  - id: think
+    action: reason
+    model: opus
+    prompt: |
+      You are a dungeon master.
+      World: {{ world_state }}
+      Memory: {{ short_memory }}
+
+      Decide what happens next.
+
+  - id: act
+    action: respond
+    format:
+      narration: string
+      world_update: map
+      memory: string
+
+  - id: verify
+    action: verify

@@ -1,0 +1,34 @@
+workflow: rag_reasoning
+description: >
+  Multi-step reasoning workflow using retrieval,
+  verification, and summarization.
+
+steps:
+  - name: plan_query
+    component: planner
+
+  - name: retrieve_context
+    component: retriever
+    input:
+      from: plan_query.sub_queries
+
+  - name: reason
+    component: reasoner
+    input:
+      question: user_query
+      context: retrieve_context.documents
+
+  - name: verify
+    component: verifier
+    input:
+      answer: reason.answer
+      sources: retrieve_context.documents
+
+  - name: summarize
+    component: summarizer
+    input:
+      verified_answer: verify.final_answer
+
+output:
+  answer: summarize.text
+  citations: verify.citations
